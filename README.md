@@ -6,4 +6,3 @@ résolution du jeu loopover (loopover.xyz), dans le cadre du TIPE, sur le thème
 
 
 ## à faire
-générateur de mélange fonctionnel

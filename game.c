@@ -95,28 +95,21 @@ void down (int* b, int n, int c) {
 
 
 int* random_perm(int n, bool sign) { // for scramble, not working
-  int* r = malloc (n*n*sizeof(int));
+  int* r = board(n);
   int s = 1;
-
-  for (int i = 0; i<n; i++) {
-    r[i]=-1;
-  }
 
   for (int i = 0; i<n*n; i++) {
     int rd = rand() % (n*n);
-    while(r[rd]!=-1) {rd=(rd+1)%(n*n);}
-    r[rd]=i;
-    if (rd>i) {s*=-1;}
+    int m=r[i];
+    r[i]=r[rd];
+    r[rd]=m;
+    if (rd!=i) {s*=-1;}
   }
-  if (sign && s==-1) {
+  if (s==-1) {
     int m = r[0];
-    r[0]=r[1];
+    r[0] = r[1];
     r[1]=m;
   }
-
-  int* id = board(n);
-  for (int i=0; i<n*n; i++) {r[i] = id[r[i]];}
-  free(id);
   return r;
 }
 
