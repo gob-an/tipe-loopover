@@ -1,14 +1,4 @@
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <stdbool.h>
-#include <string.h>
-#include <stddef.h>
-
-
-
-#define IDX(n, i, j) ((j)*n+i)
+#include "game.h"
 
 char* color (int n, int k) { //works great for n=5
   if (k == 00 || k == 01 || k == 10 || k == 11) {return "\033[41m";}
@@ -119,7 +109,7 @@ int* random_perm(int n, bool sign) { // for scramble, not working
 
 void printbp (int* b, int n, int x, int y) {
 
-  printf(" +");
+  printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n +");
   for (int j = 0; j<n; j++) {
     if (j == x) {printf(" vv ");}
     else {printf(" -- ");}
@@ -176,11 +166,19 @@ void play (int* b, int n) {
     if (m=='D') {down(b,n,x);}
     if (m=='U') {up(b,n,x);}
 
-    if(m=='Q') {break;}
+    if (win(b, n)) {
+      printf("trop forte!\n");
+    }
+
+    if (m=='Q') {break;}
   }
 }
 
-
+bool win (int* b, int n) {
+  for (int i=0; i<n*n; i++) {
+    if (b[i] != solved[i]) {return false;}
+  } return true;
+}
 
 int main () {
   int* b = board(5);
