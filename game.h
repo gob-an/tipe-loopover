@@ -10,9 +10,10 @@
 #include <stddef.h>
 
 #define IDX(n, i, j) ((j)*n+i)
+enum {L='L', R='R', U='U', D='D'};
 
 typedef struct b {
-  int* Board
+  int* Board b;
   int n;
   int m;
 } Board;
