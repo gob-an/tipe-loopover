@@ -1,6 +1,6 @@
 # Résolution du jeu loopover
 
-résolution du jeu loopover (loopover.xyz), dans le cadre du TIPE, sur le thème "cycles et boucles", développé par carykh
+résolution du jeu loopover (loopover.xyz) développé par carykh, dans le cadre du TIPE, sur le thème "cycles et boucles"
 
 ## notes
 metrics: utm/mtm
@@ -20,12 +20,21 @@ signature préservée ssi s impaire
 commutateurs -> 3c
 d'où groupe alterné si impair, symétrique tout entier si pair
 
-
 q: est-ce que si on se place dans le sous-groupe où le rectangle jusque (i,j) est résolu, la résolution en <Uk>k>=i <Rk>k>=j optimale?
 -> non: eg 3c sur le côté
 q: ok si uniformément mélangé?
+
+kociemba: https://kociemba.org/themen/fifteen/fifteensolver.html
+
+pattern recog? différentes heuristiques (distances) (manhattan dist, walking dist): inversion vaut plus?
 
 
 
 ## à faire
 finir ida* -> min_heap
+
+
+
+## sources
+
+https://michael.kim/blog/puzzle
