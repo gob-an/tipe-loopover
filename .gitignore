@@ -1,0 +1,5 @@
+*.out
+*.log
+*.ent
+*.aux
+*.gz
