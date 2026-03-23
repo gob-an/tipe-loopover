@@ -43,7 +43,9 @@ int dh (State st, Move m) {
 
 /* create a copy + move */
 Board apply (Board b; Move m) {
-
+  for (int i=0; i<n; i++) {
+    
+  }
 }
 
 Board

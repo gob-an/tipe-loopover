@@ -3,10 +3,15 @@
 \usepackage{french}[babel]
 \usepackage{longtable}
 \usepackage{hyperref}
+\usepackage{xcolor}
 
 \usepackage{endnotes}
 \let\footnote=\endnote
 \renewcommand{\enoteheading}{}
+
+\newcommand{\hreftwo}[1]{\href{#1}{#1}}
+
+
 
 \title{MCOT}
 \date{}
@@ -16,11 +21,11 @@
 \begin{document}
 	\maketitle
 
-	Ayant depuis longtemps un attrait pour les puzzles permutatifs, tels que le \textit{Rubik's Cube}, ou encore le taquin, je me suis intéressé assez rapidement à la vitesse dans ces disciplines.
+	Ayant depuis longtemps un attrait pour les puzzles permutatifs, tels que le \textit{Rubik's Cube}, ou encore le taquin, je me suis intéressé assez rapidement à la vitesse, c'est-à-dire la résolution en un temps court, dans ces disciplines.
 	
-	Plus récemment, je me suis intéressé au jeu \url{loopover.xyz}: proche du taquin, sur un plateau de taille $5\times 5$, un joueur déplace, ligne par ligne, des carreaux numérotés de 1 à 25, dans le but de les ordonner, à partir d'un mélange aléatoire. \\
+	Plus récemment, je me suis intéressé au jeu \hreftwo{loopover.xyz}: proche du taquin, sur un plateau de taille $5\times 5$, un joueur déplace, ligne par ligne, des carreaux numérotés de 1 à 25, dans le but de les ordonner, à partir d'un mélange aléatoire.
 	
-	Cependant, on rencontre également dans le Rubik's Cube des disciplines plus exotiques, tels que la résolution à une main, à l'aveugle, ou encore optimisée.	Cette dernière, bien que pratiquée par les compétiteurs, est également bien présente d'un point de vue tant mathématique qu'informatique.
+	Cependant, la résolution de vitesse n'est pas la seule discipline: on rencontre également dans le Rubik's Cube certaines, plus exotiques, telles que la résolution à une main, à l'aveugle, ou encore optimisée.	Cette dernière, bien que pratiquée par les compétiteurs, est également bien présente d'un point de vue tant mathématique qu'informatique.
 
 	C'est l'attrait pour ces recherches qui m'a mené à me poser des questions similaires sur le loopover, et en particulier, comment un ordinateur résoudrait-il efficacement ce jeu?
 	
@@ -36,8 +41,8 @@
 		Algorithme IDA* & IDA* algorithm \\
 		Heuristique & Heuristic \\
 		Réduction de problème & Problem reduction \\
-		Gestion de la mémoire & Memory management \\
 		Algorithme glouton & Greedy algorithm \\
+		Modélasition & Modelling
 	\end{longtable}
 	
 	\subsection*{Bibliographie commentée}
@@ -45,22 +50,22 @@
 	
 	L'informatique a bien souvent pris comme exemple le cas d'un puzzle permutatif comme exemple. C'est ainsi que le \textit{Rubik's Cube} ou le taquin (parfois connu sous le nom de \textit{fifteen puzzle}) ont fait l'objet de recherche sur leur résolution, et en particulier sur l'optimisation du celle-ci en terme de nombre de mouvement.
 	
-	C'est dès 2007 que Daniel Kunkle et Gene Cooperman se penchent sur le sujet, et arrivent à résoudre le Rubik's Cube en moins de 26 mouvements, pour tout mélange\footnote{D. Kunkle, G. Cooperman, \underline{Twenty-six Moves Suffice for Rubik's Cube}, \url{http://www.ccs.neu.edu/home/gene/papers/rubik.pdf}}. S'ensuit alors une recherche du nombre optimal de mouvements pour résoudre un mélange quelconque: combien de mouvements, au maximum, une entité omnisciente aurait-elle besoin pour résoudre un Rubik's Cube? Ce nombre est fréquemment appelé \textit{God's Number}, ou Nombre de Dieu.
+	C'est dès 2007 que Daniel Kunkle et Gene Cooperman se penchent sur le sujet, et arrivent à résoudre le Rubik's Cube en moins de 26 mouvements, pour tout mélange\footnote{D. Kunkle, G. Cooperman,\\ \underline{Twenty-six Moves Suffice for Rubik's Cube},\\ \hreftwo{http://www.ccs.neu.edu/home/gene/papers/rubik.pdf}\\}. S'ensuit alors une recherche du nombre optimal de mouvements pour résoudre un mélange quelconque: combien de mouvements, au maximum, une entité omnisciente aurait-elle besoin pour résoudre un Rubik's Cube? Ce nombre est fréquemment appelé \textit{God's Number}, ou Nombre de Dieu.
 	
-	En 2010, quatre mathématiciens démontrèrent finalement que ce nombre égale 20\footnote{T. Rokicki, H. Kociemba, M. Davidson, J. Dethridge, \underline{God's number is twenty}, \url{http://www.cube20.org/}}. Cependant, le nombre de mélanges possibles (de l'ordre de $43\cdot 10^{18}$) étant important, une résolution par pure exploration de tous les mélanges s'est révélée impossible. C'est pourquoi les chercheurs se sont restreints à une résolution en deux phases: la réduction au sous-groupe engendré par les doubles-mouvements (communément appelée \textit{Half-Turn Reduction}), puis la résolution depuis cet état \footnote{H. Kociemba, \url{https://kociemba.org/cube.htm}}. De plus, une élimination par symétrie des cas à explorer a été mise en \oe uvre. Cette exploration a tout de même pris un temps CPU de 35 ans.
+	En 2010, quatre mathématiciens démontrèrent finalement que ce nombre est 20\footnote{T. Rokicki, H. Kociemba, M. Davidson, J. Dethridge,\\ \underline{God's number is twenty},  \\\hreftwo{http://www.cube20.org/}\\}. Cependant, le nombre de mélanges possibles (de l'ordre de $43\cdot 10^{18}$) étant important, une résolution par pure exploration de tous les mélanges s'est révélée impossible. C'est pourquoi les chercheurs se sont restreints à une résolution en deux phases: la réduction au sous-groupe engendré par les doubles-mouvements (communément appelée \textit{Half-Turn Reduction}), puis la résolution depuis cet état \footnote{H. Kociemba, \\\hreftwo{https://kociemba.org/cube.htm} \\}. De plus, une élimination par symétrie des cas à explorer a été mise en \oe uvre. Cette exploration a tout de même pris un temps CPU de 35 ans.
 	
-	Par la suite, le taquin a fait l'objet d'études similaires: il a été démontré que le Nombre de Dieu est, pour ce puzzle, 80 \footnote{A. Brünggera, A. Marzettab, K. Fukudac, J. Nievergelt, \underline{The parallel search bench ZRAM and its applications}, \url{http://www.iro.umontreal.ca/~gendron/Pisa/References/BB/Brungger99.pdf}}. C'est la recherche de différentes heuristiques qui a guidé la résolution de ce puzzle \footnote{D. Hasan, A. Aladdin, H. Talabani, T. Rashid, S. Mirjalili, \underline{The Fifteen Puzzle- A New Approach through Hybridizing Three Heuristics Methods}, \url{https://arxiv.org/abs/2302.02985}}.
+	Par la suite, le taquin a fait l'objet d'études similaires: il a été démontré que le Nombre de Dieu est, pour ce puzzle, 80 \footnote{A. Brünggera, A. Marzettab, K. Fukudac, J. Nievergelt,  \\\underline{The parallel search bench ZRAM and its applications},\\ \hreftwo{http://www.iro.umontreal.ca/~gendron/Pisa/References/BB/Brungger99.pdf}\\}. C'est la recherche de différentes heuristiques qui a guidé la résolution de ce puzzle \footnote{D. Hasan, A. Aladdin, H. Talabani, T. Rashid, S. Mirjalili,\\ \underline{The Fifteen Puzzle- A New Approach through Hybridizing Three Heuristics Methods},\\ \hreftwo{https://arxiv.org/abs/2302.02985}\\}.
 	
-	De plus, ces recherches sont évidemment dépendantes de la métrique utilisée pour définir la taille d'une solution, à savoir de ce que l'on qualifie de mouvement: pour prendre l'exemple du Rubik's Cube, les recherches ont été faites en considérant une rotation d'un demi-tour comme un unique mouvement (dite \textit{Half-Turn Metric}). Cependant, d'autres recherches ont été mises en place afin de considérer dautres métriques (comme le \textit{Quarter-Turn Metric}\footnote{T. Rokicki, M. Davidson, \underline{God's Number is 26 in the Quarter-Turn Metric}, \url{https://www.cube20.org/qtm/}}). Cette situation se retrouve dans le taquin, où, d'un point de vue humain, déplacer des carreaux dans la même direction pourrait ne compter que comme un mouvement \footnote{B. Norskog, \underline{The Fifteen Puzzle can be solved in 43 "moves"}, \url{http://forum.cubeman.org/?q=node/view/223}}.
+	De plus, ces recherches sont évidemment dépendantes de la métrique utilisée pour définir la taille d'une solution, à savoir de ce que l'on qualifie de mouvement: pour prendre l'exemple du Rubik's Cube, les recherches ont été faites en considérant une rotation d'un demi-tour comme un unique mouvement (dite \textit{Half-Turn Metric}). Cependant, d'autres recherches ont été mises en place afin de considérer dautres métriques (comme le \textit{Quarter-Turn Metric}\footnote{T. Rokicki, M. Davidson,\\ \underline{God's Number is 26 in the Quarter-Turn Metric},\\ \hreftwo{https://www.cube20.org/qtm/}\\}). Cette situation se retrouve dans le taquin, où, d'un point de vue humain, déplacer des carreaux dans la même direction pourrait ne compter que comme un mouvement \footnote{B. Norskog,\\ \underline{The Fifteen Puzzle can be solved in 43 "moves"},\\ \hreftwo{http://forum.cubeman.org/?q=node/view/223}\\}.
 	
 	Aujourd'hui, ces problèmes sont toujours d'actualité, dans le but de trouver à des solutions à des puzzles de plus en plus conséquent, qu'il s'agisse de la taille des solutions ou du nombre de mélanges possibles. En particulier, la recherche du Nombre de Dieu, pour un Rubik's Cube $4\times 4$ est toujours en cours, de même que pour d'autres puzzles. On a notamment observé la découverte du Nombre de Dieu du taquin $5\times 5$, de 109.
 	
 	\subsection*{Problématique}
-	\url{loopover.xyz} est un puzzle permutatif, dont le but est d'arriver à une position dite résolue, à partir d'un mélange donné. Nous nous proposons ici de trouver, de manière algorithmique, une solution courte, en terme de nombre de mouvements utilisés, à tout mélange.
+	\hreftwo{loopover.xyz} est un puzzle permutatif, dont le but est d'arriver à une position dite résolue, à partir d'un mélange donné. Nous nous proposons ici de trouver, de manière algorithmique, une solution courte, en terme de nombre de mouvements utilisés, à tout mélange.
 	
 	\subsection*{Objectifs TIPE}
 	\begin{enumerate}
-		\item Modéliser le jeu dans le langage C.
+		\item Modéliser le jeu dans le langage C, et le représenter par une interface graphique.
 		\item Tenter de résoudre par un algorithme d'exploration en profondeur la version classique du puzzle.
 		\item À l'aide d'une heuristique, et de l'algorithme IDA*, réduire le temps de calcul d'une solution.
 		\item Proposer un algorithme glouton, à travers la décomposition en plusieurs phases de la résolution du puzzle.
@@ -68,7 +73,7 @@
 		\item Analyser l'optimalité des résultats, pour trouver le nombre optimal de mouvements nécessaires afin de résoudre le puzzle.
 	\end{enumerate}
 	
-	
+	 \newpage
 	\subsection*{Références bibliographiques}
 	\theendnotes
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.21)  26 JAN 2026 01:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.10.21)  3 FEB 2026 14:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -219,6 +219,36 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' (voir le source
 )
 \Hy@SectionHShift=\skip54
 )
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def (voir le source, ligne 274).
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' (voir le source, ligne 1
+350).
+Package xcolor Info: Model `hsb' substituted by `rgb' (voir le source, ligne 13
+54).
+Package xcolor Info: Model `RGB' extended (voir le source, ligne 1366).
+Package xcolor Info: Model `HTML' substituted by `rgb' (voir le source, ligne 1
+368).
+Package xcolor Info: Model `Hsb' substituted by `hsb' (voir le source, ligne 13
+69).
+Package xcolor Info: Model `tHsb' substituted by `hsb' (voir le source, ligne 1
+370).
+Package xcolor Info: Model `HSB' substituted by `hsb' (voir le source, ligne 13
+71).
+Package xcolor Info: Model `Gray' substituted by `gray' (voir le source, ligne 
+1372).
+Package xcolor Info: Model `wave' substituted by `hsb' (voir le source, ligne 1
+373).
+)
 (/usr/share/texlive/texmf-dist/tex/latex/endnotes/endnotes.sty
 Package: endnotes 2020-01-02 endnotes package
 \c@endnote=\count279
@@ -233,186 +263,129 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 (./mcot.aux)
 \openout1 = `mcot.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it (voir le source, ligne 1
-6).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n (voir le source, ligne 1
-6).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n (voir le source, ligne 16
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it (voir le source, ligne 2
+1).
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n (voir le source, ligne 2
+1).
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n (voir le source, ligne 21
 ).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for T1/lmr/m/n (voir le source, ligne 16)
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for T1/lmr/m/n (voir le source, ligne 21)
 .
 LaTeX Font Info:    Trying to load font information for T1+lmr (voir le source,
- ligne 16).
+ ligne 21).
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n (voir le source, ligne 16
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n (voir le source, ligne 21
 ).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n (voir le source, ligne 1
-6).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for U/cmr/m/n (voir le source, ligne 16).
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n (voir le source, ligne 2
+1).
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for U/cmr/m/n (voir le source, ligne 21).
 
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n (voir le source, ligne 16
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n (voir le source, ligne 21
 ).
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n (voir le source, ligne 16)
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n (voir le source, ligne 21)
 .
-LaTeX Font Info:    ... okay (voir le source, ligne 16).
-Package hyperref Info: Link coloring OFF (voir le source, ligne 16).
+LaTeX Font Info:    ... okay (voir le source, ligne 21).
+Package hyperref Info: Link coloring OFF (voir le source, ligne 21).
  (./mcot.out) (./mcot.out)
 \@outlinefile=\write4
 \openout4 = `mcot.out'.
 
-\c@chapter=\count281
-\@FrCount=\count282
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count281
+\scratchdimen=\dimen148
+\scratchbox=\box57
+\nofMPsegments=\count282
+\nofMParguments=\count283
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count284
+\MPscratchDim=\dimen149
+\MPnumerator=\count285
+\makeMPintoPDFobject=\count286
+\everyMPtoPDFconversion=\toks20
+)
+\c@chapter=\count287
+\@FrCount=\count288
+
 
  french.sty : -48- Lecture du fichier de configuration de e-french (\`a la lign
-e 16).
+e 21).
 (/usr/share/texlive/texmf-dist/tex/generic/e-french/french.cfg)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> (voir le source, ligne 18).
+(Font)              <14.4> (voir le source, ligne 23).
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> (voir le source, ligne 18).
+(Font)              <7> (voir le source, ligne 23).
 LaTeX Font Info:    Trying to load font information for U+lasy (voir le source,
- ligne 18).
+ ligne 23).
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> (voir le source, ligne 21).
+(Font)              <12> (voir le source, ligne 26).
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> (voir le source, ligne 21).
+(Font)              <8> (voir le source, ligne 26).
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> (voir le source, ligne 21).
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-[1
+(Font)              <6> (voir le source, ligne 26).
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout3 = `mcot.ent'.
 
 
-Overfull \hbox (3.1752pt too wide) in paragraph at lines 52--53
+Overfull \hbox (3.1752pt too wide) in paragraph at lines 57--58
 \OT1/cmr/m/n/12 que le Nombre de Dieu est, pour ce puzzle, 80[]. C'est la re-ch
 erche de diff^^Serentes
  []
 
-[2] (./mcot.ent
+[2] [3] (./mcot.ent
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> (voir le source, ligne 2).
 
-Overfull \hbox (7.37498pt too wide) in paragraph at lines 2--15
-[][]\OT1/cmr/m/n/10 D. Kunkle, G. Cooperman, $[]$, []$\OT1/cmtt/m/n/10 http \ p
-rotect \
+Underfull \hbox (badness 10000) in paragraph at lines 2--15
+
  []
 
 
-Overfull \hbox (40.49625pt too wide) in paragraph at lines 2--15
-\OT1/cmtt/m/n/10 relax \ let \ let \ penalty \ @M \ hskip0 . 5 \ fontdimen2 \ f
-ont = \penalty \ @M \ hskip0 . 5 \ fontdimen2 \
+Underfull \hbox (badness 10000) in paragraph at lines 17--32
+
  []
 
 
-Overfull \hbox (8.99652pt too wide) in paragraph at lines 2--15
-\OT1/cmtt/m/n/10 font \ unskip \ penalty \ @M \ hskip0 . 5 \ fontdimen2 \ font 
-: \ @ beginparpenalty = \ @ M \ relax /
+Underfull \hbox (badness 10000) in paragraph at lines 34--39
+
  []
 
 
-Overfull \hbox (14.24648pt too wide) in paragraph at lines 17--32
-\OT1/cmtt/m/n/10 protect \ relax \ let \ let \ penalty \ @M \ hskip0 . 5 \ font
-dimen2 \ font = \penalty \ @M \ hskip0 .
+Underfull \hbox (badness 10000) in paragraph at lines 41--60
+
  []
 
 
-Overfull \hbox (24.74638pt too wide) in paragraph at lines 17--32
-\OT1/cmtt/m/n/10 5 \ fontdimen2 \ font \ unskip \ penalty \ @M \ hskip0 . 5 \ f
-ontdimen2 \ font : \ @ beginparpenalty =
+Underfull \hbox (badness 10000) in paragraph at lines 62--86
+
  []
 
 
-Overfull \hbox (29.99634pt too wide) in paragraph at lines 34--38
-\OT1/cmtt/m/n/10 font = \penalty \ @M \ hskip0 . 5 \ fontdimen2 \ font \ unskip
- \ penalty \ @M \ hskip0 . 5 \ fontdimen2 \
+Underfull \hbox (badness 10000) in paragraph at lines 88--103
+
  []
 
 
-Overfull \hbox (105.27866pt too wide) in paragraph at lines 40--59
-[][]\OT1/cmr/m/n/10 A. Br^^?unggera, A. Marzettab, K. Fukudac, J. Nievergelt, $
-[]$,
- []
+ french.sty : -22- abr\'eviation de "moves" non trouv\'ee (\`a la ligne 116).
 
+Underfull \hbox (badness 10000) in paragraph at lines 105--119
 
-Overfull \hbox (3.74657pt too wide) in paragraph at lines 40--59
-[]$\OT1/cmtt/m/n/10 http \ protect \ relax \ let \ let \ penalty \ @M \ hskip0 
-. 5 \ fontdimen2 \ font = \penalty \ @M \
- []
-
-
-Overfull \hbox (61.49606pt too wide) in paragraph at lines 40--59
-\OT1/cmtt/m/n/10 hskip0 . 5 \ fontdimen2 \ font \ unskip \ penalty \ @M \ hskip
-0 . 5 \ fontdimen2 \ font : \ @ beginparpenalty =
- []
-
-
-Overfull \hbox (255.39003pt too wide) in paragraph at lines 61--85
-[][]\OT1/cmr/m/n/10 D. Hasan, A. Aladdin, H. Talabani, T. Rashid, S. Mirjalili,
- $[]$,
- []
-
-
-Overfull \hbox (8.99652pt too wide) in paragraph at lines 61--85
-[]$\OT1/cmtt/m/n/10 https \ protect \ relax \ let \ let \ penalty \ @M \ hskip0
- . 5 \ fontdimen2 \ font = \penalty \ @M \
- []
-
-
-Overfull \hbox (61.49606pt too wide) in paragraph at lines 61--85
-\OT1/cmtt/m/n/10 hskip0 . 5 \ fontdimen2 \ font \ unskip \ penalty \ @M \ hskip
-0 . 5 \ fontdimen2 \ font : \ @ beginparpenalty =
- []
-
-[3]
-Overfull \hbox (14.24648pt too wide) in paragraph at lines 87--102
-\OT1/cmtt/m/n/10 protect \ relax \ let \ let \ penalty \ @M \ hskip0 . 5 \ font
-dimen2 \ font = \penalty \ @M \ hskip0 .
- []
-
-
-Overfull \hbox (24.74638pt too wide) in paragraph at lines 87--102
-\OT1/cmtt/m/n/10 5 \ fontdimen2 \ font \ unskip \ penalty \ @M \ hskip0 . 5 \ f
-ontdimen2 \ font : \ @ beginparpenalty =
- []
-
-
- french.sty : -22- abr\'eviation de "moves" non trouv\'ee (\`a la ligne 115).
-
-Overfull \hbox (8.99652pt too wide) in paragraph at lines 104--118
-\OT1/cmtt/m/n/10 let \ let \ penalty \ @M \ hskip0 . 5 \ fontdimen2 \ font = \p
-enalty \ @M \ hskip0 . 5 \ fontdimen2 \
- []
-
-
-Overfull \hbox (8.99652pt too wide) in paragraph at lines 104--118
-\OT1/cmtt/m/n/10 font \ unskip \ penalty \ @M \ hskip0 . 5 \ fontdimen2 \ font 
-: \ @ beginparpenalty = \ @ M \ relax /
- []
-
-
-Overfull \hbox (8.99652pt too wide) in paragraph at lines 104--118
-\OT1/cmtt/m/n/10 /forum . cubeman . org / \protect \ relax \ let \ unskip \ pen
-alty \ @M \ hskip0 . 5 \ fontdimen2 \
  []
 
 ) [4] (./mcot.aux)
@@ -423,16 +396,16 @@ L3 programming layer <2024-01-22>
 Package rerunfilecheck Info: File `mcot.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
-(\end occurred when \ifmmode on line 117 was incomplete)
-(\end occurred when \iftrue on line 117 was incomplete)
-(\end occurred when \ifmmode on line 117 was incomplete)
-(\end occurred when \iftrue on line 117 was incomplete)
-(\end occurred when \ifmmode on line 101 was incomplete)
-(\end occurred when \iftrue on line 101 was incomplete)
-(\end occurred when \ifmmode on line 84 was incomplete)
-(\end occurred when \iftrue on line 84 was incomplete)
-(\end occurred when \ifmmode on line 58 was incomplete)
-(\end occurred when \iftrue on line 58 was incomplete)
+(\end occurred when \ifmmode on line 118 was incomplete)
+(\end occurred when \iftrue on line 118 was incomplete)
+(\end occurred when \ifmmode on line 118 was incomplete)
+(\end occurred when \iftrue on line 118 was incomplete)
+(\end occurred when \ifmmode on line 102 was incomplete)
+(\end occurred when \iftrue on line 102 was incomplete)
+(\end occurred when \ifmmode on line 85 was incomplete)
+(\end occurred when \iftrue on line 85 was incomplete)
+(\end occurred when \ifmmode on line 59 was incomplete)
+(\end occurred when \iftrue on line 59 was incomplete)
 (\end occurred when \ifmmode on line 37 was incomplete)
 (\end occurred when \iftrue on line 37 was incomplete)
 (\end occurred when \ifmmode on line 31 was incomplete)
@@ -440,13 +413,13 @@ Package rerunfilecheck Info: File `mcot.out' has not changed.
 (\end occurred when \ifmmode on line 14 was incomplete)
 (\end occurred when \iftrue on line 14 was incomplete) 
 Here is how much of TeX's memory you used:
- 8953 strings out of 476153
- 133637 string characters out of 5794325
- 1936975 words of memory out of 5000000
- 30864 multiletter control sequences out of 15000+600000
- 564057 words of font info for 61 fonts, out of 8000000 for 9000
+ 9865 strings out of 476153
+ 146204 string characters out of 5794325
+ 1933975 words of memory out of 5000000
+ 31759 multiletter control sequences out of 15000+600000
+ 563720 words of font info for 59 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,6n,79p,935b,541s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,955b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/
@@ -455,13 +428,11 @@ ublic/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on mcot.pdf (4 pages, 144818 bytes).
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on mcot.pdf (4 pages, 124833 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
- 95 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  18 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
