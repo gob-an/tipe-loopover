@@ -1,0 +1,80 @@
+\documentclass{beamer}
+\usepackage{tikz}
+\usetheme{Berkeley}
+\usecolortheme{default}
+
+\title{Résolution algorithmique du jeu \url{loopover.xyz}} % il y a une option je sais pas pourquoi
+% \subtitle{...}
+\author{Parent Quentin}
+
+\institute[VFU]{} % on verra
+\date[VLC 2021]{} % à ajouter
+
+\logo{%??? on verra
+}
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Table des matières}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+	\frame{\titlepage}
+	
+	\begin{frame}{Jeu}
+	% insérer ici un joli dessin		
+	\end{frame}
+	
+	\section{Approche calculatoire}
+	\begin{frame}{Algorithme}
+		description avec des jolis dessins
+	\end{frame}
+	
+	\begin{frame}{Majoration}
+		faire le calcul en fonction de $N$ puis conclure à $125$? (vérif)
+	\end{frame}
+	
+	\begin{frame}{Minoration}
+		Nombre de mélanges en moins de $k$ mouvements, pour un puzzle de taille $N$:
+		$$ 1+\sum_{i=0}^k (4N-1)^i = 1 + \frac{1-(4N-1)^{k+1}}{2-4N}$$
+		Si $k$ est la majoration recherchée, on a donc:
+		\begin{align*}
+			& \frac{N!/2} \geqslant 1 + \frac{1-(4N-1)^{k+1}}{2-4N} \\
+			\iff & k \geqslant \frac{\log\left(\left(\frac{N!}2-1\right)(4N-2)-1\right)}{\log(4N-1)}
+		\end{align*}
+		ie, pour $N=5$, $k\geqslant3$
+	\end{frame}
+	
+	
+	\section{Résolution}
+	\begin{frame}
+		\frametitle{Approche naïve}
+	\end{frame}
+	\begin{frame}
+		\frametitle{IDA*}
+	\end{frame}
+	\begin{frame}{Résolution par phases}
+		préciser que réduit au groupe engendré par blable $\rightarrow$ nice
+		
+		théorie des groupes: sous-groupes normaux 
+	\end{frame}
+	
+
+	\section{Exploration}
+	\begin{frame}{Exploration exhaustive} % voir si je le mets en annexe?
+		quel goat ce Heap
+		
+		(pour injection de [1, k] dans [1, n], Heap+espacements)
+	\end{frame}
+	\begin{frame}{Réduction par symétries}
+		
+	\end{frame}
+	\begin{frame}{Résultats}
+	\end{frame}
+	
+	\begin{frame}{Résolution en une phase}
+		
+	\end{frame}
+\end{document}

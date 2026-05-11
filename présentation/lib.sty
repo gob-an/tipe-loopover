@@ -1,0 +1,236 @@
+%%%%%%%%%%%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%
+\usepackage[margin=2.5cm]{geometry}
+%\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{dsfont}
+\usepackage[shortlabels]{enumitem}
+\usepackage{comment}
+\usepackage{xparse}
+\usepackage{xfrac}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+
+
+%%%%%%%%%%%%%%%%% environments %%%%%%%%%%%%%%%%%
+\definecolor{corrigecolor}{gray}{0.7}
+
+\newmdenv[
+linecolor=corrigecolor,
+linewidth=2pt,
+leftline=true,
+rightline=false,
+topline=false,
+bottomline=false,
+skipabove=6pt,
+skipbelow=6pt,
+innertopmargin=4pt,
+innerbottommargin=4pt,
+innerleftmargin=6pt,
+innerrightmargin=4pt,
+backgroundcolor=gray!5,
+leftmargin=\dimexpr-\@totalleftmargin\relax
+rightmargin=0pt,
+innerleftmargin=6pt,
+innerrightmargin=4pt,
+needspace=1em,
+]{correctionbox}
+
+\newenvironment{corr}
+{\begin{correctionbox}
+	\setlength{\parindent}{\baselineskip}% alinéa normal
+	\hspace{0pt}
+	\vspace{-\baselineskip/2}
+}{\end{correctionbox}}
+
+
+
+\NewDocumentEnvironment{bbox}{m o}
+{
+	\IfValueTF{#2}{
+		% ----- AVEC titre -----
+		\begin{tcolorbox}[
+			enhanced,
+			colframe=#1,
+			colback=white,
+			coltitle=#1,
+			colbacktitle=white,
+			boxrule=0.8pt,
+			sharp corners,
+			title=\bfseries #2,
+			attach boxed title to top left={
+				yshift=-\tcboxedtitleheight/2,
+				xshift=3em
+			},
+			boxed title style={
+				size=small,
+				colframe=white,
+				boxrule=0pt,
+				colback=white
+			}
+			]
+		}
+		{
+			% ----- SANS titre -----
+			\begin{tcolorbox}[
+				enhanced,
+				colframe=#1,
+				colback=white,
+				boxrule=0.8pt,
+				sharp corners
+				]
+			}
+		}
+		{
+		\end{tcolorbox}
+	}
+	
+	% ================= PR =================
+	
+	\NewDocumentEnvironment{pr}{o}
+	{
+		\IfValueTF{#1}
+		{\begin{bbox}{blue}[#1]}
+			{\begin{bbox}{blue}}
+			}
+			{
+			\end{bbox}
+		}
+		
+		% ================= DF =================
+		
+		\NewDocumentEnvironment{df}{o}
+		{
+			\IfValueTF{#1}
+			{\begin{bbox}{teal}[#1]}
+				{\begin{bbox}{teal}}
+				}
+				{
+				\end{bbox}
+			}
+
+%%%%%%%%%%%%%% standard notations %%%%%%%%%%%%%%
+
+% standard sets
+\renewcommand{\P}{\mathds P}
+\newcommand{\N}{\mathds N}
+\newcommand{\Z}{\mathds Z}
+\newcommand{\Q}{\mathds Q}
+\newcommand{\R}{\mathds R}
+\newcommand{\C}{\mathds C}
+\newcommand{\F}[1]{\mathds F_{#1}}
+\newcommand{\K}{\mathds K}
+
+% standard letters
+\newcommand{\eps}{\varepsilon} % epsilon
+\newcommand{\vphi}{\varphi} % phi
+\newcommand{\perm}{\mathfrak{S}} % symetric group
+\newcommand{\esp}{\mathds E} % esperance
+
+
+\NewDocumentCommand{\cv}{ o o }{  % limit
+	\ensuremath{
+		\IfNoValueTF{#1}{
+			\IfNoValueTF{#2}{\rightarrow}{\xrightarrow[#2]{}}
+		}{
+			\IfNoValueTF{#2}{\xrightarrow[#1]{} }{ \xrightarrow[#2]{#1} }
+		}
+	}
+}
+
+
+% linear algebra
+\makeatletter
+\NewDocumentCommand{\Vect}{o} { % Vect
+	\mathrm{Vect}
+	\IfValueT{#1}{_{#1}}
+	\@ifnextchar({}{\,}
+}
+\makeatother
+\DeclareMathOperator{\rg}{rg} % rank
+\DeclareMathOperator{\Sp}{Sp} % spectrum
+\DeclareMathOperator{\Diag}{Diag}
+\newcommand{\scal}[2]{\left\langle #1, #2\right\rangle} % scalar product
+\DeclareMathOperator{\tr}{tr} % trace
+
+
+
+\NewDocumentCommand{\Co}{o g g}{ % C^k class
+	\mathcal C%
+	\IfValueT{#1}{^{#1}}%
+	\IfValueT{#2}{\left(#2
+		\IfValueT{#3}{,\,#3}\right)}
+}
+
+
+% standard functions
+% trigo
+\DeclareMathOperator{\atan}{Arctan}
+\DeclareMathOperator{\acos}{Arccos}
+\DeclareMathOperator{\asin}{Arcsin}
+
+\newcommand{\id}{\mathrm{id}} % identity
+
+% complex
+\makeatletter % imaginary part
+\renewcommand{\Im}{
+	{%
+		\futurelet\@let@token\@Im
+	}%
+}
+\newcommand{\@Im}{
+	\ifx\@let@token(
+	\operatorname{\mathrm{Im}}
+	\else
+	\operatorname{\mathrm{Im}}\,
+	\fi
+}
+\makeatother
+
+\makeatletter % real part
+\renewcommand{\Re}{
+	\mathop{
+		\futurelet\@let@token\@Re
+	}
+}
+\newcommand{\@Re}{
+	\ifx\@let@token(
+	\operatorname{\mathrm{Re}}
+	\else
+	\operatorname{\mathrm{Re}}\,
+	\fi
+}
+\makeatother
+
+
+% relations
+\newcommand{\ind}{\perp\!\!\!\perp} % indépendance
+\newcommand{\congr}[2]{\equiv #1 \, [#2]}
+
+
+
+%%%%%%%%%%%%%%%%%%%% tools %%%%%%%%%%%%%%%%%%%%
+\newcolumntype{C}{>{$\displaystyle}c<{$}} % mathmode column for arrays
+
+\newcommand{\colle}[3]{
+	\title{Corrigé colle S#1 \\ MPI/MPI* du lycée Faidherbe \\ \large{Exercices #2}}
+	\author{Léane Parent}
+}
+
+%%%%%%%%%%%%%%%%%%%% short %%%%%%%%%%%%%%%%%%%%
+\newcommand{\Rq}{\textbf{Remarque}: }
+\newcommand{\rappel}{\textbf{Rappel}: }
+\newcommand{\cor}{\textbf{Corollaire}: }
+% \newcommand{\note}{\textit{Note}: }
+\newcommand{\elem}{\textit{Éléments de démonstration}: }
+
+
+
+
+
+

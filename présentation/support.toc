@@ -1,0 +1,3 @@
+\beamer@sectionintoc {1}{Approche calculatoire}{3}{0}{1}
+\beamer@sectionintoc {2}{Résolution}{7}{0}{2}
+\beamer@sectionintoc {3}{Exploration}{11}{0}{3}
