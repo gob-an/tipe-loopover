@@ -13,9 +13,10 @@ typedef struct list {
   struct list* next;
 } path;
 
-void free_path(path*);
+void lst_free(path*);
 path* add(char, int, path*);
 path* reverse(path*, path*); //appeler avec NULL
+void print_list(path*);
 
 
 /******** HEAP **********/

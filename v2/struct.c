@@ -1,4 +1,4 @@
-jvoid free_path (path* p) {
+void lst_free (path* p) {
   if (p==NULL) {return;}
   free_path(p->next);
   free(p);
@@ -15,11 +15,10 @@ path* reverse (path* l, path* acc) { // appeler avec acc=NULL
   return reverse (l->next, add(l->move, l->row, acc));
 }
 
-
-
-
-
-
+void print_list (path* lst) {
+ if (lst==NULL) {printf("\n")}
+ printf("%c%d ", lst->move, lst->row)
+}
 
 void swap (int* t, int i, int j) {
     int tmp = t[i];
@@ -28,7 +27,6 @@ void swap (int* t, int i, int j) {
 }
 
 void enlarge (prio* hp, int capa) {
-    // allocation des nouvelles zones
     hp->capa = capa;
     int* prio = malloc(hp->capa*sizeof(int));
     int** elts = malloc(hp->capa * sizeof(int*));
