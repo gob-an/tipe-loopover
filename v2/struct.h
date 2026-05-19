@@ -4,6 +4,7 @@
 #include "game.h"
 
 enum {L='L', R='R', U='U', D='D'};
+char moves[4] = {U, R, L, D}
 
 
 /******** LIST **********/
@@ -31,5 +32,8 @@ void hp_push(prio*, int*, int);
 contenu hp_pop(prio*);
 void hp_free(prio*);
 
+
+
+// trouver une hashmap?
 
 #endif

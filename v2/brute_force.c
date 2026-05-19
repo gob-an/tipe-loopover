@@ -1,33 +1,32 @@
 #include "game.h"
-
 #include <string.h>
 
 #define MAX_STATES 161440  // 9! max pour 3x3
 
 typedef struct {
-    int state[SIZE];
+    tile state[SIZE];
     int parent;
-    char move[10];
+    char move[10]; // wtf bien sûr que ça fonctionnait pas -> A CHANGER,N GIHGIUERHGIUHGFVUHRZIU
 } Node;
 
 Node nodes[MAX_STATES];
 int front = 0, back = 0;
 
 // comparaison d'états
-int equal(int *a, int *b) {
-    return memcmp(a, b, SIZE * sizeof(int)) == 0;
+int equal(tile *a, tile *b) {
+    return memcmp(a, b, SIZE * sizeof(tile)) == 0;
 }
 
 // copie
-void copy(int *dst, int *src) {
-    memcpy(dst, src, SIZE * sizeof(int));
+void copy(tile *dst, tile *src) {
+    memcpy(dst, src, SIZE * sizeof(tile));
 }
 
 // hash simple (très basique)
 int visited[MAX_STATES];
 int visited_count = 0;
 
-int is_visited(int *s) {
+int is_visited(tile *s) {
     for (int i = 0; i < visited_count; i++) {
         if (equal(nodes[visited[i]].state, s))
             return 1;
@@ -40,7 +39,7 @@ void add_visited(int idx) {
 }
 
 // BFS
-int bfs(int *start, int *goal) {
+int bfs(tile* start, tile* goal) {
     copy(nodes[0].state, start);
     nodes[0].parent = -1;
     front = 0; back = 1;
@@ -103,7 +102,7 @@ void print_solution(int idx) {
     if (idx == -1) return;
     print_solution(nodes[idx].parent);
     if (nodes[idx].parent != -1)
-        printf("%s ", nodes[idx].move);
+        printf("%s ", nodes[idx].move); 
 }
 
 int main() {

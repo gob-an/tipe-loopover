@@ -12,16 +12,20 @@
 #define N 3
 #define SIZE N*N
 #define IDX(i, j) ((j)*N+i)
+#typedef int tile
 
-void print(int*);
+#define IS_INT(x) _Generic((x), \ int: true, \ default: false)
+#define IS_CHAR(x) _Generic((x), \ char: true, \ default: false)
 
-void R(int*, int);
-void L(int*, int);
-void D(int*, int);
-void U(int*, int);
+void print(tile*);
 
-bool solved(int*);
-void scram(int*);
-void play(int*);
+void R(tile*, int);
+void L(tile*, int);
+void D(tile*, int);
+void U(tile*, int);
+
+bool solved(tile*);
+void scram(tile*);
+void play(tile*);
 
 #endif

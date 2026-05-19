@@ -20,7 +20,7 @@ void print_list (path* lst) {
  printf("%c%d ", lst->move, lst->row)
 }
 
-void swap (int* t, int i, int j) {
+void swap (int* t, int i, int j) { // vérif si fct avec poly... si néc stocker indice au lieu de
     int tmp = t[i];
     t[i] = t[j];
     t[j] = tmp;
@@ -106,4 +106,8 @@ void hp_free (prio* hp) {
     free(hp->elts);
     free(hp->prio);
     free(hp);
-}
+} // need for heaps??? rip.
+
+
+
+// voir si besoin d'une hashmap

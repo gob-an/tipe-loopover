@@ -14,8 +14,7 @@
 }
 \AtBeginSection[]
 {
-	\begin{frame}
-		\frametitle{Table des matières}
+	\begin{frame}{Table des matières}
 		\tableofcontents[currentsection]
 	\end{frame}
 }
@@ -24,7 +23,7 @@
 	\frame{\titlepage}
 	
 	\begin{frame}{Jeu}
-	% insérer ici un joli dessin		
+		insérer ici un joli dessin (deux, après un U1?)		
 	\end{frame}
 	
 	\section{Approche calculatoire}
@@ -41,24 +40,45 @@
 		$$ 1+\sum_{i=0}^k (4N-1)^i = 1 + \frac{1-(4N-1)^{k+1}}{2-4N}$$
 		Si $k$ est la majoration recherchée, on a donc:
 		\begin{align*}
-			& \frac{N!/2} \geqslant 1 + \frac{1-(4N-1)^{k+1}}{2-4N} \\
-			\iff & k \geqslant \frac{\log\left(\left(\frac{N!}2-1\right)(4N-2)-1\right)}{\log(4N-1)}
+			& \frac{N^2!}2  \geqslant 1 + \frac{1-(4N-1)^{k+1}}{2-4N} \\
+			\iff & k \geqslant \frac{\log\left(\left(\frac{N^2!}2-1\right)(4N-2)-1\right)}{\log(4N-1)}
 		\end{align*}
-		ie, pour $N=5$, $k\geqslant3$
+		ie, pour $N=5$, $k\geqslant 20$.
 	\end{frame}
 	
 	
 	\section{Résolution}
-	\begin{frame}
-		\frametitle{Approche naïve}
+	\begin{frame}{Approche naïve}
+		bfs!!! c'est long...
 	\end{frame}
-	\begin{frame}
-		\frametitle{IDA*}
+	\begin{frame}{IDA*}
+		ben c'est un IDA* quoi
 	\end{frame}
 	\begin{frame}{Résolution par phases}
-		préciser que réduit au groupe engendré par blable $\rightarrow$ nice
+		préciser que réduit au groupe engendré par blabla $\rightarrow$ nice
 		
 		théorie des groupes: sous-groupes normaux 
+	\end{frame}
+	
+	\begin{frame}{Comparaison}
+		\begin{center}
+			faire un joli tableau temps/nb mvts sur bruteforce/IDA*/deux phases/trois phases
+%			\begin{tabular}{||c c c >+< c||} 
+%				\hline
+%				Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+%				\hline
+%				1 & 6 & 87837 & 787 \\ 
+%				\hline
+%				2 & 7 & 78 & 5415 \\
+%				\hline
+%				3 & 545 & 778 & 7507 \\
+%				\hline
+%				4 & 545 & 18744 & 7560 \\
+%				\hline
+%				5 & 88 & 788 & 6344 \\ [1ex] 
+%				\hline
+%			\end{tabular}
+		\end{center}
 	\end{frame}
 	
 
@@ -66,15 +86,29 @@
 	\begin{frame}{Exploration exhaustive} % voir si je le mets en annexe?
 		quel goat ce Heap
 		
-		(pour injection de [1, k] dans [1, n], Heap+espacements)
+		(pour injection de $[\![1, k]\!]$ dans $[\![1, n]\!]$, Heap+$\binom n k$)
 	\end{frame}
 	\begin{frame}{Réduction par symétries}
-		
+		je sais pas ce que je dis ici, on prie??
 	\end{frame}
+
 	\begin{frame}{Résultats}
+		on fait un joli récap
+	\end{frame}
+		
+	\section{Conclusion}
+	\begin{frame}{Résolution monophase}
+		Les mélanges longs		
+		
+		et ça nous donne une minoration :D
 	\end{frame}
 	
-	\begin{frame}{Résolution en une phase}
-		
+	\begin{frame}{Bibliographie}
+		ben euh la biblio
+	\end{frame}
+	
+	\section{Annexes}
+	\begin{frame}{euhhhh}
+		on verra
 	\end{frame}
 \end{document}
