@@ -1,17 +1,20 @@
-#ifndef SOLVER_H
-#define SOLVER_H
+#ifndef IDA_STAR_H
+#define IDA_STAR_H
 
 #include "game.h"
+#include <stdint.h>
+#include <stdlib.h>
+#include <limits.h>
+#include <stdbool.h>
 
 #define MAX_DEPTH 128
-#define FOUND (-1)
 
 typedef struct {
     char move;
     int index;
 } Step;
 
-int heuristic(tile* b);
+/* lance l'IDA* */
 int ida_star(tile* start, Step* solution);
 
 #endif

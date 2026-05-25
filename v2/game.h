@@ -9,10 +9,10 @@
 #include <string.h>
 #include <stddef.h>
 
-#define N 3
-#define SIZE N*N
-#define IDX(i, j) ((j)*N+i)
-#typedef int tile
+#define N 5
+#define SIZE (N*N)
+#define IDX(i, j) ((i)*N+j)
+typedef uint8_t tile;
 
 #define IS_INT(x) _Generic((x), \ int: true, \ default: false)
 #define IS_CHAR(x) _Generic((x), \ char: true, \ default: false)
@@ -26,6 +26,7 @@ void U(tile*, int);
 
 bool solved(tile*);
 void scram(tile*);
+tile* solved_board(void);
 void play(tile*);
 
 #endif

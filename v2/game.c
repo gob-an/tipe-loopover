@@ -71,13 +71,20 @@ void scram (tile* b) { // gérer le polymorphisme
   }
 }
 
-void play (int* b) {
+tile* solved_board() { // changer le type
+  tile* r = malloc(SIZE*sizeof(tile));
+  for (int i=0; i<SIZE; i++) {
+    r[i]=i+1;
+  } return r;
+}
+
+void play (tile* b) {
   char cmd;
   int i;
 
   while (true) {
     print(b);
-    printf("command (L/R/U/D + coord, q to quit):");
+    printf("L/R/U/D + coord \n q to quit \n h for help \n s to scram: ");
 
     scanf(" %c", &cmd);
     if (cmd == 'q') break;
@@ -93,9 +100,9 @@ void play (int* b) {
       case 'R': R(b, i-1); break;
       case 'U': U(b, i-1); break;
       case 'D': D(b, i-1); break;
-      case 'h': printf("L/R/U/D + coord \n q to quit \n h for help \n s to scram"); break;
+      case 'h': printf("L/R/U/D + coord \n q to quit \n h for help \n s to scram: "); break;
       case 's': scram(b); break;
-      default: printf("Commande inconnue\n");
+      default: printf("unknown command :(\n");
     }
 
     if (solved(b)) printf("yay!\n");
