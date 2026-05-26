@@ -1,6 +1,3 @@
-# multiphase.c
-
-```c
 #include "ida_star.h"
 #include <stdbool.h>
 #include <limits.h>
