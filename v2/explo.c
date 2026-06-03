@@ -21,12 +21,12 @@ void swap(tile *x, tile *y) {
 
 
 
-void heap_alt (int n, tile *a, int len, bool parity, int* movecount, double* total_time, Step* solution, int* c)
+void heap_alt (int n, tile *a, int len, bool *parity, int* movecount, double* total_time, Step* solution, int* c)
 {
     if (n == 1) {
-        if (parity)
-            {(*c)++; //if(c%100==0)
-              printf("%d", *c); print(a); printf("%d", parity);
+        if (*parity)
+            {(*c)++; if((*c)%100==0)
+              printf("%d\n", *c);
             stat(a, solution, movecount, total_time);}
         return;
     }
@@ -42,7 +42,7 @@ void heap_alt (int n, tile *a, int len, bool parity, int* movecount, double* tot
         else
             swap(&a[i], &a[n - 1]);
 
-        parity = !parity;
+        *parity = !(*parity);
     }
 }
 
@@ -55,8 +55,9 @@ int main () {
   int* mcount = calloc(MAX_DEPTH, sizeof(int));
   double* total_time = calloc(MAX_DEPTH, sizeof(double));
   int c=0;
+  bool par=true;
 
-  heap_alt(SIZE, board, SIZE, true, mcount, total_time, solution, &c);
+  heap_alt(SIZE, board, SIZE, &par, mcount, total_time, solution, &c);
 
   for (int i=0; i<MAX_DEPTH; i++) {
     printf("%d scram in %d moves, in %f seconds\n", mcount[i], i, (float) total_time[i]/mcount[i]);
