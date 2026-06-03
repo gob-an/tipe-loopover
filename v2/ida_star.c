@@ -87,13 +87,13 @@ static int search(tile* board,
 
             int t = search(board, g + 1, bound, move);
 
+            undo_move(board, move, idx);
+
             if (t == -1)
                 return -1;
 
             if (t < min)
                 min = t;
-
-            undo_move(board, move, idx);
         }
     }
 

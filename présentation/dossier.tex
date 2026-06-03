@@ -1,0 +1,53 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{lib}
+
+\title{Majoration du nombre de mouvement nécessaire à la résolution du jeu \url{loopover.xyz}}
+\author{Parent Quentin}
+\date{}
+
+\begin{document}
+	\maketitle
+	
+	\section*{Introduction}
+	caser ici l'abstract + la problématique
+	
+	\section{Jeu}
+		\subsection{Définition}
+			objectif, définition des mouvements, notation
+		\subsection{Groupe de représentation du jeu} \label{gr}
+			sg de $\perm_{N^2}$, engendré par blabla
+			
+			À l'aide de commutateurs, on engendre les 3c $\rightarrow$ contient $\alt_{N^2}$
+			
+			\begin{itemize}
+				\item si $N$ est pair, puisque \texttt{U1} est de signature $-1$, le groupe du puzzle est donc $\perm_{N^2}$
+				\item si $N$ est impair, toues les mouvements élémentaires sont de signature 1, le groupe du puzzle est donc $\alt_{N^2}$
+			\end{itemize}
+	
+	\section{Résolution théorique}
+	\subsection{Minoration}
+		Si $k$ est le majorant recherché, alors on peut associer à tout état du puzzle un mélange en moins de $k$ mouvements.
+		
+		Or, il existe $\displaystyle \sum_{i=0}^N (4N)^i$ mélanges en moins de $k$ mouvements.
+		
+		De plus, en retirant les mouvements inutiles ($\mathtt{U1\ D1} = \id$, par exemple), il n'y a que (4N-1) choix à partir du second mouvement.
+		
+		Finalement, il existe $\displaystyle 1 + 4N\sum_{i=0}^{k-1}(4N-1)^i = 1+4N\frac{1-(4N-1)^N}{2-4N}$.
+		
+		On a donc $\frac{N^2!}2 \leqslant 1+4N\frac{1-(4N-1)^k}{2-4N}$ (dans le cas $N$ impair), d'où
+	
+	
+	\subsection{Algorithme de résolution}
+	\subsection{Majoration}
+	
+	\section{Résolution algorithmique}
+	\subsection{IDA*}
+	\subsubsection*{Résultats}
+	\subsection{Résolution multiphase}
+	\subsubsection*{Motivation}
+	
+	On vérifie de même qu'en \ref{gr} que le sous-groupe $\{\sigma \in G\,|\, \text{le bloc $p*q$ est résolu}\}$ est égal à $\langle R_i, U_j\rangle_{i>p,\, j>q}$, permettant donc de chercher une solution n'utilisant que ces mouvements, réduisant donc les états explorés lors de l'utilisation de l'algorithme IDA*.
+	\subsubsection*{Résultats}
+	
+	\section{Conclusion}
+\end{document}
