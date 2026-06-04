@@ -43,6 +43,62 @@
 	\section{Résolution algorithmique}
 	\subsection{IDA*}
 	\subsubsection*{Résultats}
+				\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					x tick label style={/pgf/number format/1000 sep=},
+					ylabel=quantité,
+					xlabel={{nombre de mouvements, $N=3$}},
+					enlargelimits=0.15,
+					legend style={
+						at={(0.5,-0.15)},
+						anchor=north,
+						legend columns=-1
+					},
+					ybar=5pt,% configures `bar shift'
+					bar width=9pt,
+					nodes near coords,
+					nodes near coords style={font=\tiny},
+					]
+					\addplot coordinates{
+						(0,1)(1,12)(2,48)(3,300)(4,1751)(5,9080)(6,34151)(7,68963)(8,54835)(9,12221)(10,78)
+					};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		
+		Pour $N=3$, en explorant à l'aide d'un algorithme de Heap tous les mélanges (de signature 1) que $k_3=10$. \\
+		
+		Cependant, sur un échantillon de 100 mélanges aléatoires sur un puzzle de dimension 4, on observe un temps moyen de 14.61 secondes pour la résolution. En explorant de même tous les états du puzzle, l'ordinateur prendrait 9 milliards d'année pour atteindre un résultat, rendant cette solution impraticable.
+		
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					x tick label style={/pgf/number format/1000 sep=},
+					ylabel=quantité sur 100 mélanges,
+					xlabel={{nombre de mouvements, $N=4$}}
+					enlargelimits=0.15,
+					legend style={
+						at={(0.5,-0.15)},
+						anchor=north,
+						legend columns=-1
+					},
+					ybar=5pt,% configures `bar shift'
+					bar width=9pt,
+					nodes near coords,
+					nodes near coords style={font=\footnotesize},
+					]
+					\addplot coordinates{
+						(13, 3)(14, 11)(15,15)(16, 34)(17, 26)(18, 11)
+					};
+				\end{axis}
+			\end{tikzpicture}
+		\end{center}
+		
+		Pour $N=5$, l'algorithme IDA* ne termine pas en une demie-heure, nous empêchant également d'utiliser cette solution.
+		
+	
+	
 	\subsection{Résolution multiphase}
 	\subsubsection*{Motivation}
 	

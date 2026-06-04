@@ -24,7 +24,7 @@ void swap(tile *x, tile *y) {
 void heap_alt (int n, tile *a, int len, bool *parity, int* movecount, double* total_time, Step* solution, int* c)
 {
     if (n == 1) {
-        if (*parity)
+        if (*parity || N%2==0)
             {(*c)++; if((*c)%100==0)
               printf("%d\n", *c);
             stat(a, solution, movecount, total_time);}

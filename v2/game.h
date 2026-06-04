@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stddef.h>
 
-#define N 3
+#define N 4
 #define SIZE (N*N)
 #define IDX(i, j) ((i)*N+j)
 typedef uint8_t tile;
