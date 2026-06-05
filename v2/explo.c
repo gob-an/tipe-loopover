@@ -3,6 +3,8 @@
 
 #include <time.h>
 
+
+//////////////// exploration exhaustive par IDA* ////////////////
 void stat (tile* board, Step* solution, int* mcount, double* total_time) {
   clock_t start = clock();
   int len = ida_star(board, solution);
@@ -25,9 +27,7 @@ void heap_alt (int n, tile *a, int len, bool *parity, int* movecount, double* to
 {
     if (n == 1) {
         if (*parity || N%2==0)
-            {(*c)++; if((*c)%100==0)
-              printf("%d\n", *c);
-            stat(a, solution, movecount, total_time);}
+            stat(a, solution, movecount, total_time);
         return;
     }
 
@@ -45,6 +45,7 @@ void heap_alt (int n, tile *a, int len, bool *parity, int* movecount, double* to
         *parity = !(*parity);
     }
 }
+
 
 
 

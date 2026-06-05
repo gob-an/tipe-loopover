@@ -47,6 +47,35 @@ void U (tile* b, int col) {
     b[IDX(N-1, col)] = tmp;
 }
 
+
+
+tile* Rcpy(tile* src_tab, int idx) {
+  tile* new_tab = malloc(SIZE * sizeof(tile));
+  memcpy(new_tab, src_tab, SIZE * sizeof(tile));
+  R(new_tab, idx);
+  return new_tab;
+}
+tile* Lcpy(tile* src_tab, int idx){
+  tile* new_tab = malloc(SIZE * sizeof(tile));
+  memcpy(new_tab, src_tab, SIZE * sizeof(tile));
+  L(new_tab, idx);
+  return new_tab;
+}
+tile* Dcpy(tile* src_tab, int idx) {
+  {
+    tile* new_tab = malloc(SIZE * sizeof(tile));
+    memcpy(new_tab, src_tab, SIZE * sizeof(tile));
+    D(new_tab, idx);
+    return new_tab;
+  }
+}
+tile* Ucpy(tile* src_tab, int idx) {
+  tile* new_tab = malloc(SIZE * sizeof(tile));
+  memcpy(new_tab, src_tab, SIZE * sizeof(tile));
+  U(new_tab, idx);
+  return new_tab;
+}
+
 bool solved (tile* b) {
   for (int i=0; i<N*N; i++) {
     if (b[i]!=i+1 && b[i]!=0) return false; // gérer le polymorphisme

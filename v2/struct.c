@@ -1,113 +1,84 @@
-void lst_free (path* p) {
-  if (p==NULL) {return;}
-  free_path(p->next);
-  free(p);
-}
+#include "struct.h"
 
-path* add (char hd_m, int hd_r, path* tl) {
-  path* r = malloc(sizeof(path));
-  r->move=hd_m; r->row=hd_r; r->next=tl;
+
+
+Queue* empty_q() {
+  Queue* r = malloc(sizeof(Queue));
+  r->front=NULL; r->rear=NULL;
   return r;
 }
 
-path* reverse (path* l, path* acc) { // appeler avec acc=NULL
-  if (l==NULL) {return NULL;}
-  return reverse (l->next, add(l->move, l->row, acc));
+bool is_empty(Queue* q) {
+  return q->front==NULL && q->rear==NULL;
+}
+void push(Queue* q, tile* st, int d) {
+  Node n = malloc(sizeof(struct Nd));
+  n->val=st; n->next=q->front; n->prev=NULL; n->depth=d;
+  if (is_empty(q))q->rear=n;
+  else q->front->prev=n;
+  q->front = n;
+}
+int pop(Queue* q, tile** r) {
+  if (is_empty(q)) {*r=NULL; return -1;}
+  Node popped=q->rear;
+  *r = popped->val; int d=popped->depth;
+  q->rear=popped->prev;
+  if(q->rear==NULL) q->front=NULL;
+  else q->rear->next=NULL;
+  free(popped); return d;
 }
 
-void print_list (path* lst) {
- if (lst==NULL) {printf("\n")}
- printf("%c%d ", lst->move, lst->row)
-}
-
-void swap (int* t, int i, int j) { // vérif si fct avec poly... si néc stocker indice au lieu de
-    int tmp = t[i];
-    t[i] = t[j];
-    t[j] = tmp;
-}
-
-void enlarge (prio* hp, int capa) {
-    hp->capa = capa;
-    int* prio = malloc(hp->capa*sizeof(int));
-    int** elts = malloc(hp->capa * sizeof(int*));
-    for (int i = 0; i < hp->size; i++) {
-        prio[i] = hp->prio[i];
-        elts[i] = hp->prio[i];
-    }
-    free(hp->elts);
-    free(hp->prio);
-    hp->elts = elts;
-    hp->prio = prio;
-}
-
-void sift_up (prio* hp, int i) {
-    int parent = (i - 1) / 2;
-    if (i != 0 && hp->prio[i] < hp->prio[parent]) {
-        swap(hp->prio, i, parent);
-        swap(hp->elts, i, parent);
-        sift_up(hp, parent);
+void hash_init(HashMap map) {
+    for (int i = 0; i < HASH_SIZE; i++) {
+        map[i] = NULL;
     }
 }
 
-void sift_down (prio* hp, int i) {
-    int lchild = 2*i + 1;
-    int rchild = 2*i + 2;
-    int j = i;
-    if (lchild < hp->size && hp->prio[i] > hp->prio[lchild]) {
-        j = lchild;
+// 2. Fonction de hachage ultra simple (djb2)
+unsigned int hash_function(tile* state) {
+    unsigned int hash = 5381;
+    for (int i = 0; i < SIZE; i++) {
+        // On convertit la valeur de la tile en entier pour le calcul
+        hash = ((hash << 5) + hash) + (unsigned int)state[i];
     }
-    if (rchild < hp->size && hp->prio[j] > hp->prio[rchild]) {
-        j = rchild;
-    }
-    if (j != indice_mal_place) {
-        echange(hp->prio, j, indice_mal_place);
-        echange(hp->elts, j, indice_mal_place);
-        sift_down(hp, j);
-    }
-
-prio* hp_create (void) {
-    prio* hp = malloc(sizeof(prio));
-    hp->capa = CAPACITE_MAX_INITIALE;
-    hp->size = 0;
-    hp->prio = malloc(hp->capa * sizeof(int));
-    hp->elts = malloc(hp->capa * sizeof(int*));
-    return hp;
+    return hash % HASH_SIZE;
 }
 
-void push (prio* hp, int* elt, int prio) {
-    // si on doit enfiler un élément et que la zone allouée est pleine,
-    // on réalloue une zone deux fois plus grande
-    if (hp->size == hp->capa) {
-        enlarge(hp, 2 * hp->capa);
+// 3. Insertion + Vérification de doublon
+// Renvoie 'true' si l'élément a été inséré, 'false' s'il y était déjà
+bool hash_insert(HashMap map, tile* state) {
+    unsigned int slot = hash_function(state);
+    HashNode* curr = map[slot];
+
+    // On parcourt la liste de cette case pour voir si l'état existe déjà
+    while (curr != NULL) {
+        if (memcmp(curr->state, state, SIZE * sizeof(tile)) == 0) {
+            return false; // Déjà présent !
+        }
+        curr = curr->next;
     }
-    // on insère tout en bas à droite puis percolation vers le haut
-    hp->elts[hp->size] = elt;
-    hp->prio[hp->size] = prio;
-    hp->size += 1;
-    sift_up(hp, hp->size-1);
+
+    // Si on arrive ici, l'état n'existe pas : on l'ajoute en tête de liste
+    HashNode* new_node = malloc(sizeof(HashNode));
+    new_node->state = malloc(SIZE * sizeof(tile));
+    memcpy(new_node->state, state, SIZE * sizeof(tile));
+
+    new_node->next = map[slot];
+    map[slot] = new_node;
+
+    return true; // Bien inséré
 }
 
-int* hp_pop (prio* hp) {
-    assert(hp->size != 0);
-    int* r = hp->elts[0];
-    hp->size--;
-    if (hp->size != 0) {
-        swap(hp->elts, 0, hp->size);
-        swap(hp->prio, 0, hp->size);
-        sift_down(hp, 0);
+// 4. Libération de la mémoire
+void hash_free(HashMap map) {
+    for (int i = 0; i < HASH_SIZE; i++) {
+        HashNode* curr = map[i];
+        while (curr != NULL) {
+            HashNode* temp = curr;
+            curr = curr->next;
+            free(temp->state);
+            free(temp);
+        }
+        map[i] = NULL;
     }
-    if (hp->size < hp->capa / 4) {
-        enlarge(hp, hp->capa / 2);
-    }
-    return r;
 }
-
-void hp_free (prio* hp) {
-    free(hp->elts);
-    free(hp->prio);
-    free(hp);
-} // need for heaps??? rip.
-
-
-
-// voir si besoin d'une hashmap

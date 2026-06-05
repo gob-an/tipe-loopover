@@ -9,7 +9,7 @@
 #include <string.h>
 #include <stddef.h>
 
-#define N 4
+#define N 5
 #define SIZE (N*N)
 #define IDX(i, j) ((i)*N+j)
 typedef uint8_t tile;
@@ -23,6 +23,11 @@ void R(tile*, int);
 void L(tile*, int);
 void D(tile*, int);
 void U(tile*, int);
+
+tile* Rcpy(tile*, int);
+tile* Lcpy(tile*, int);
+tile* Dcpy(tile*, int);
+tile* Ucpy(tile*, int);
 
 bool solved(tile*);
 void scram(tile*);

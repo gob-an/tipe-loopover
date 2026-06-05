@@ -1,5 +1,6 @@
 #include "game.h"
 #include "ida_star.h"
+#include "multiphase.h"
 
 #include <time.h>
 
@@ -17,7 +18,7 @@ int main(void) {
 
     clock_t start = clock();
 
-    int len = ida_star(board, solution);
+    int len = ida_star_block(board, solution, 4, 3);
 
     clock_t end = clock();
 
